@@ -29,7 +29,7 @@ namespace Lab_Task_1.Controllers
             return View();
         }
 
-        public ActionResult Referace() 
+        public ActionResult Reference() 
         { 
             return View();
         }

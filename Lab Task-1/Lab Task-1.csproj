@@ -166,7 +166,7 @@
     <Content Include="Views\Portfolio\Home.cshtml" />
     <Content Include="Views\Portfolio\Education.cshtml" />
     <Content Include="Views\Portfolio\Project.cshtml" />
-    <Content Include="Views\Portfolio\Referace.cshtml" />
+    <Content Include="Views\Portfolio\Reference.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
