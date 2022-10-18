@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Lab_Task_2.Models
 {
-    public class User
+    public class student
     {
         [Required, MinLength(3), MaxLength(25), DataType(DataType.Text), RegularExpression(@"^[a-zA-z \.\-]+$")]
         public string Name { get; set; }
@@ -18,9 +18,7 @@ namespace Lab_Task_2.Models
         [Required, RegularExpression(@"^(\+88)?01[356789]{1}[0-9]{8}$")]
         public string Phone { get; set; }
         [DateValidation]
-        public DateTime DateOfBirth { get; set; }
-        [Required, RegularExpression(@"^(A|B|O|AB)(\+|-)$")]
-        public string BloodGroup { get; set; }
+        public DateTime DateOfBirth { get; set; }    
 
         [Required]
         public string Gender { get; set; }
