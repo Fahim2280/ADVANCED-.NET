@@ -1,0 +1,37 @@
+﻿@model Lab_Task_3.Models.product
+
+@{
+    ViewBag.Title = "show";
+}
+
+
+<h2>Add</h2>
+
+@using (Html.BeginForm("addProduct", "products", FormMethod.Post))
+{
+    <div class="container">
+
+        <dib class="form-group">
+            <label>Name</label>
+            @Html.HiddenFor(x => x.Id)
+            @Html.ValidationMessageFor(x => x.Name)
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        </dib>
+
+        <dib class="form-group">
+            <label>price</label>
+            @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+        </dib>
+
+        <dib class="form-group">
+            <label>Qty</label>
+            @Html.TextBoxFor(x => x.Qty, new { @class = "form-control" })
+        </dib>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-danger">Cancel</button>
+        </div>
+
+    </div>
+}

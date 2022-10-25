@@ -1,0 +1,32 @@
+﻿@model List<Lab_Task_3.Models.product>
+
+@{
+    ViewBag.Title = "productList";
+}
+
+<h2>productList</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Qty</th>
+    </tr>
+
+    @foreach (var item in Model)
+     {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Qty</td>
+            <td>
+                <a href="@Url.Action("show", new {item.Id,item.Name,item.Price,item.Qty})" class="btn btn-success">Edit</a>
+                <a href="@Url.Action("Delete", new {item.Id})"class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+     }
+     
+    </table>
+
