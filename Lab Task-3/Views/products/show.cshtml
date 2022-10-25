@@ -12,8 +12,8 @@
     <div class="container">
 
         <dib class="form-group">
-            <label>Name</label>
             @Html.HiddenFor(x => x.Id)
+            <label>Name</label>
             @Html.ValidationMessageFor(x => x.Name)
             @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
         </dib>
