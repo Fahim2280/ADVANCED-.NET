@@ -64,12 +64,11 @@ namespace Zero_Hunger.Controllers
                           select i).FirstOrDefault();
 
             var delete = (from i in obj.EmployeeAssigns
-                          where i.EmployeeId == E.EmId
+                          where i.Id == E.EmId
                           select i).FirstOrDefault();
 
-            if(Delete.EmId == delete.EmployeeId)
+            if(Delete.EmId == delete.Id)
             {
-                //delete.Id = null;
                 obj.Employees.Remove(Delete);
                 obj.SaveChanges();
             }
@@ -104,6 +103,18 @@ namespace Zero_Hunger.Controllers
         {
             var show = obj.EmployeeAssigns.ToList();
             return View(show);
+        }
+
+        [HttpGet]
+        public ActionResult Done(int id)
+        {
+            var change = (
+                from pr in obj.EmployeeAssigns
+                where pr.Id == id
+                select pr).SingleOrDefault();
+            change.Status = "Completed";
+            obj.SaveChanges();
+            return RedirectToAction("ShowAssignEmplove");
         }
     }
 }
